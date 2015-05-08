@@ -1,0 +1,24 @@
+{
+  "name": "CodeSchool-Angular",
+  "version": "0.0.0",
+  "authors": [
+    "Timidfriendly <timid@point-online.org>"
+  ],
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.4",
+    "angular": "~1.3.15"
+  }
+}
