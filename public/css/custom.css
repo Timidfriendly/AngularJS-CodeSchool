@@ -1,0 +1,13 @@
+img {
+    width: 100%;
+    min-height: 30px;
+}
+
+.img-wrap {
+    width: 200px;
+    height: 200px;    
+}
+
+.small-image {
+    width: 85px;
+}

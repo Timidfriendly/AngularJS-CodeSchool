@@ -14,9 +14,9 @@
         color: '#CCC',
         faces: 14,
         images: [
-            "images/gem-02.gif",
-            "images/gem-05.gif",
-            "images/gem-09.gif"
+            "images/gem-03.png",
+            "images/gem-05.png",
+            "images/gem-01.png"
         ],
         reviews: [{
             stars: 5,
@@ -40,9 +40,9 @@
         color: '#EEE',
         faces: 12,
         images: [
-            "images/gem-01.gif",
-            "images/gem-03.gif",
-            "images/gem-04.gif"
+            "images/gem-01.png",
+            "images/gem-03.png",
+            "images/gem-04.png"
         ],
         reviews: [{
             stars: 3,
@@ -66,9 +66,9 @@
         color: '#000',
         faces: 6,
         images: [
-            "images/gem-06.gif",
-            "images/gem-07.gif",
-            "images/gem-10.gif"
+            "images/gem-02.png",
+            "images/gem-05.png",
+            "images/gem-01.png"
         ],
         reviews: [{
             stars: 1,
