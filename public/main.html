@@ -6,13 +6,22 @@
     <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body class="container" ng-controller="StoreController as store">
-<div class="product row" ng-repeat="product in store.products">
+<div class="product row">
     <div class="col-sm-12">
-        <h3>
-            {{product.name}}
-            <em class="pull-right">${{product.price}}</em>
-        </h3>
-        <hr/>
+        <!--  Products Container  -->
+        <div class="list-group">
+            <!--  Product Container  -->
+            <div class="list-group-item" ng-repeat="product in store.products">
+                <h3>
+                    {{product.name}}
+                    <em class="pull-right">{{product.price | currency}}</em>
+                </h3>
+                <!-- Image Gallery  -->
+                <div class="gallery">
+                    <img />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
