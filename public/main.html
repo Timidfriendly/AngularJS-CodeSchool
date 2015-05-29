@@ -18,7 +18,10 @@
                     <em class="pull-right">{{product.price | currency}}</em>
                 </h3>
                 <!-- Image Gallery  -->
-                <div class="gallery">
+                <div class="gallery" ng-hide="{{product.images.length}}">
+                    <small>Our apologies there are no product images for this article</small>
+                </div>
+                <div class="gallery" ng-show="{{product.images.length}}">
                     <div class="img-wrap">
                         <img ng-src="{{product.images[0]}}" />
                     </div>

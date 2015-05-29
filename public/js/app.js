@@ -14,9 +14,9 @@
         color: '#CCC',
         faces: 14,
         images: [
-            "images/gem-03.png",
-            "images/gem-05.png",
-            "images/gem-01.png"
+            //"images/gem-03.png",
+            //"images/gem-05.png",
+            //"images/gem-01.png"
         ],
         reviews: [{
             stars: 5,
