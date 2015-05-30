@@ -11,3 +11,26 @@ img {
 .small-image {
     width: 85px;
 }
+
+
+.nav-pills>li>a {
+    margin-top: 1em;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid transparent;
+    bottom: auto;
+
+}
+.nav-pills>li>a:hover,
+.nav-pills>li.active>a {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-bottom: #eee;
+    color: #222;
+
+}
+.panel {
+    margin-top: -2px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #eee;
+}

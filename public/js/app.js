@@ -16,6 +16,31 @@
             }
         };
     });
+    //
+    //app.controller('TabController', function(){
+    //    this.tab = 1;
+    //
+    //    this.setTab = function(newValue){
+    //        this.tab = newValue;
+    //    };
+    //
+    //    this.isSet = function(tabName){
+    //        return this.tab === tabName;
+    //    };
+    //});
+
+    app.controller('GalleryController', function(){
+        this.current = 0;
+        this.setCurrent = function(newCurrent) {
+            if (newCurrent == null) {
+                this.current = 0;
+            } else {
+                this.current = newCurrent;
+            }
+        };
+    });
+
+
 
     var gems = [{
         name: 'Azurite',
