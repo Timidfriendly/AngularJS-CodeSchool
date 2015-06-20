@@ -7,27 +7,16 @@
 
     app.controller('TabController', function(){
         this.tab = 1;
-        this.setTab = function (setTab) {
-            this.tab = setTab;
+        this.setTab = function (tabToSet, $event) {
+            this.tab = tabToSet;
+            $event.preventDefault();
         };
-        this.isSet = function (setTab) {
-            if (this.tab === setTab) {
+        this.isSet = function (tabIsSet) {
+            if (this.tab === tabIsSet) {
                 return true;
             }
         };
     });
-    //
-    //app.controller('TabController', function(){
-    //    this.tab = 1;
-    //
-    //    this.setTab = function(newValue){
-    //        this.tab = newValue;
-    //    };
-    //
-    //    this.isSet = function(tabName){
-    //        return this.tab === tabName;
-    //    };
-    //});
 
     app.controller('GalleryController', function(){
         this.current = 0;

@@ -39,11 +39,11 @@
                 <section class="tab" ng-controller="TabController as panel">
                     <ul class="nav nav-pills">
                         <li ng-class="{active : panel.isSet(1)}">
-                            <a href="#tab{{$index + 1}}-1" ng-click="panel.setTab(1)">Description</a></li>
+                            <a href="#tab{{$index + 1}}-1" ng-click="panel.setTab(1, $event)">Description</a></li>
                         <li ng-class="{active : panel.isSet(2)}">
-                            <a href="#tab{{$index + 1}}-2" ng-click="panel.setTab(2)">Specs</a></li>
+                            <a href="#tab{{$index + 1}}-2" ng-click="panel.setTab(2, $event)">Specs</a></li>
                         <li ng-class="{active : panel.isSet(3)}">
-                            <a href="#tab{{$index + 1}}-3" ng-click="panel.setTab(3)">Reviews</a></li>
+                            <a href="#tab{{$index + 1}}-3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
                     </ul>
                     <div id="tab{{$index + 1}}-1" ng-show="panel.isSet(1)" class="panel">
                         <h4>Description</h4>
