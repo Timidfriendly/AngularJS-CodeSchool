@@ -21,7 +21,7 @@
                 <section class="gallery" ng-hide="{{product.images.length}}">
                     <small>Our apologies there are no product images for this article</small>
                 </section>
-                <section class="gallery" ng-show="{{product.images.length}}">
+                <section class="gallery" ng-show="{{product.images.length}}" ng-controller="GalleryController as gallery">
                     <div class="img-wrap">
                         <!--<img ng-src="{{product.images[0]}}" />-->
                         <img ng-src="{{product.images[gallery.current]}}" />
@@ -29,8 +29,7 @@
                     <hr/>
                     <ul class="img-thumbnails clearfix">
                         <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-                            <img ng-src="{{image}}" />
-
+                            <img ng-src="{{image}}" ng-click="gallery.setCurrent($index)" />
                         </li>
                     </ul>
                 </section>
@@ -39,11 +38,11 @@
                 <section class="tab" ng-controller="TabController as panel">
                     <ul class="nav nav-pills">
                         <li ng-class="{active : panel.isSet(1)}">
-                            <a href="#tab{{$index + 1}}-1" ng-click="panel.setTab(1, $event)">Description</a></li>
+                            <a href="#tab{{$index + 1}}__1" ng-click="panel.setTab(1, $event)">Description</a></li>
                         <li ng-class="{active : panel.isSet(2)}">
-                            <a href="#tab{{$index + 1}}-2" ng-click="panel.setTab(2, $event)">Specs</a></li>
+                            <a href="#tab{{$index + 1}}__2" ng-click="panel.setTab(2, $event)">Specs</a></li>
                         <li ng-class="{active : panel.isSet(3)}">
-                            <a href="#tab{{$index + 1}}-3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
+                            <a href="#tab{{$index + 1}}__3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
                     </ul>
                     <div id="tab{{$index + 1}}-1" ng-show="panel.isSet(1)" class="panel">
                         <h4>Description</h4>
