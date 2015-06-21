@@ -29,6 +29,14 @@
         };
     });
 
+    app.controller('ReviewController', function  (product) {
+        this.reviews = {};
+        this.addReview = function () {
+            product.reviews.push(this.review);
+            this.review = {};
+        }
+    });
+
 
 
     var gems = [{
