@@ -29,13 +29,20 @@
         };
     });
 
-    app.controller('ReviewController', function  (product) {
+    app.controller('ReviewController', function() {
         this.reviews = {};
-        this.addReview = function () {
+        this.addReview = function (product) {
             product.reviews.push(this.review);
+            //push review onto this product's review array
             this.review = {};
+            // clear form by creating new empty object which is then immediately bound to blockquote preview
+
+            // Note:  Had error caused by not passing product into addReview() method.
+            // Caused this error: Unknown provider: productProvider <- product <- ReviewController
+
         }
     });
+
 
 
 
