@@ -65,7 +65,7 @@
                         </ul>
 
                         <!--  Review Form -->
-                        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$validate && reviewCtrl.addReview(product)" novalidate>
+                        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                             <!--  Live Preview -->
                             <blockquote class="review" ng-show="reviewForm.$dirty">
                                 <strong class="review__star-rating" ng-show="reviewCtrl.review.stars">{{reviewCtrl.review.stars}} Stars</strong>
@@ -96,6 +96,8 @@
                             <fieldset class="form-group">
                                 <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
                             </fieldset>
+
+                            <!--debug: reviewForm.$validate {{reviewForm.$valid}}-->
                         </form>
                     </div>
                 </section>
