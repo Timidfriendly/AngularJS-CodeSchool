@@ -32,6 +32,7 @@
     app.controller('ReviewController', function() {
         this.reviews = {};
         this.addReview = function (product) {
+            this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             //push review onto this product's review array
             this.review = {};

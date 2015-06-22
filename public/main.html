@@ -59,7 +59,7 @@
                                 <blockquote>
                                     <strong>{{review.stars}} Stars</strong>
                                     {{review.body}}
-                                    <cite class="clearfix">- {{review.author}}</cite>
+                                    <cite class="clearfix">- {{review.author}} <i>on</i> {{review.createdOn | date }}</cite>
                                 </blockquote>
                             </li>
                         </ul>
@@ -70,7 +70,7 @@
                             <blockquote class="review" ng-show="reviewForm.$dirty">
                                 <strong class="review__star-rating" ng-show="reviewCtrl.review.stars">{{reviewCtrl.review.stars}} Stars</strong>
                                 <span class="review__body">{{reviewCtrl.review.body}}</span>
-                                <cite class="review__author  clearfix">- {{reviewCtrl.review.author}}</cite>
+                                <cite class="review__author  clearfix"  ng-show="reviewCtrl.review.author">- {{reviewCtrl.review.author}} </cite>
                                 <!-- TODO: figure out how to show email input immediately form the first character entry. At the moment the email address is only shown when input matches ^[a-z],@,[a-z] -->
                             </blockquote>
 
