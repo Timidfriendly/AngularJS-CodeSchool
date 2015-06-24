@@ -38,18 +38,15 @@
                 <section class="tab" ng-controller="TabController as panel">
                     <ul class="nav nav-pills">
                         <li ng-class="{active : panel.isSet(1)}">
-                            <a href="#tab{{$index + 1}}__1" ng-click="panel.setTab(1, $event)">Description</a></li>
+                            <a href="#panel-1" ng-click="panel.setTab(1, $event)">Description</a></li>
                         <li ng-class="{active : panel.isSet(2)}">
-                            <a href="#tab{{$index + 1}}__2" ng-click="panel.setTab(2, $event)">Specs</a></li>
+                            <a href="#panel-2" ng-click="panel.setTab(2, $event)">Specs</a></li>
                         <li ng-class="{active : panel.isSet(3)}">
-                            <a href="#tab{{$index + 1}}__3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
+                            <a href="#panel-3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
                     </ul>
-                    <div ng-include="'directives/product-description.html'" id="tab{{$index + 1}}-1" ng-show="panel.isSet(1)" class="panel"></div>
-                    <div id="tab{{$index + 1}}-2" ng-show="panel.isSet(2)" class="panel">
-                        <h4>Specs</h4>
-                        <blockquote>Shine: {{product.shine}}</blockquote>
-                    </div>
-                    <div id="tab{{$index + 1}}-3" ng-show="panel.isSet(3)" class="panel">
+                    <div ng-include="'directives/product-description.html'" id="panel-1" ng-show="panel.isSet(1)" class="panel"></div>
+                    <product-spec ng-show="panel.isSet(2)" id="panel-2" class="panel"></product-spec>
+                    <div id="panel-3" ng-show="panel.isSet(3)" class="panel">
                         <ul>
                             <h4>Reviews</h4>
                             <li ng-repeat="review in product.reviews">
@@ -91,7 +88,7 @@
                                 <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
                             </fieldset>
                             <fieldset class="form-group">
-                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" ng-click="reviewForm.$setPristine();" />
                             </fieldset>
 
                             <!--debug: reviewForm.$validate {{reviewForm.$valid}}-->

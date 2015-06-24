@@ -33,6 +33,7 @@ img {
     border: 1px solid #ddd;
     padding: 10px;
     background-color: #eee;
+    display: block; /* needed for custom xml elements that browser doesn't fully understand */
 }
 
 /*form validation*/
