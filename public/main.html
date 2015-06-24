@@ -44,10 +44,7 @@
                         <li ng-class="{active : panel.isSet(3)}">
                             <a href="#tab{{$index + 1}}__3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
                     </ul>
-                    <div id="tab{{$index + 1}}-1" ng-show="panel.isSet(1)" class="panel">
-                        <h4>Description</h4>
-                        <blockquote>{{product.description}}</blockquote>
-                    </div>
+                    <div ng-include="'directives/product-description.html'" id="tab{{$index + 1}}-1" ng-show="panel.isSet(1)" class="panel"></div>
                     <div id="tab{{$index + 1}}-2" ng-show="panel.isSet(2)" class="panel">
                         <h4>Specs</h4>
                         <blockquote>Shine: {{product.shine}}</blockquote>

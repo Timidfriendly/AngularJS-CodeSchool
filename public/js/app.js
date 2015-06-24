@@ -30,6 +30,7 @@
     });
 
     app.controller('ReviewController', function() {
+        // this = $pristine;
         this.reviews = {};
         this.addReview = function (product) {
             this.review.createdOn = Date.now();
