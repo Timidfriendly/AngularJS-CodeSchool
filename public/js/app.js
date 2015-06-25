@@ -53,6 +53,14 @@
         };
     });
 
+    app.directive("myCustomAttrDirective", function () {
+        return {
+            strict: "A",
+            replace: true,
+            templateUrl: "directives/my-custom-attr-directive.html"
+        };
+    });
+
 
 
 

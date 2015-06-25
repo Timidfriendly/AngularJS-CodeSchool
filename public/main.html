@@ -35,18 +35,22 @@
                 </section>
                 <hr/>
 
+
                 <section class="tab" ng-controller="TabController as panel">
                     <ul class="nav nav-pills">
                         <li ng-class="{active : panel.isSet(1)}">
                             <a href="#panel-1" ng-click="panel.setTab(1, $event)">Description</a></li>
                         <li ng-class="{active : panel.isSet(2)}">
-                            <a href="#panel-2" ng-click="panel.setTab(2, $event)">Specs</a></li>
+                            <a href="#panel-{{panel.$index}}" ng-click="panel.setTab(2, $event)">Specs</a></li>
                         <li ng-class="{active : panel.isSet(3)}">
                             <a href="#panel-3" ng-click="panel.setTab(3, $event)">Reviews</a></li>
+                        <li ng-class="{active : panel.isSet(4)}">
+                            <a href="#panel-4" ng-click="panel.setTab(4, $event)">Custom attribute directive</a></li>
                     </ul>
-                    <div ng-include="'directives/product-description.html'" id="panel-1" ng-show="panel.isSet(1)" class="panel"></div>
-                    <product-spec ng-show="panel.isSet(2)" id="panel-2" class="panel"></product-spec>
-                    <div id="panel-3" ng-show="panel.isSet(3)" class="panel">
+                    <div id="panel-1" class="panel" ng-include="'directives/product-description.html'" ng-show="panel.isSet(1)"></div>
+
+                    <product-spec id="panel-2" class="panel" ng-show="panel.isSet(2)" ></product-spec>
+                    <div id="panel-3" class="panel" ng-show="panel.isSet(3)">
                         <ul>
                             <h4>Reviews</h4>
                             <li ng-repeat="review in product.reviews">
@@ -94,6 +98,7 @@
                             <!--debug: reviewForm.$validate {{reviewForm.$valid}}-->
                         </form>
                     </div>
+                    <div id="panel-4" class="panel" my-custom-attr-directive  ng-show="panel.isSet(4)"></div>
                 </section>
             </div>
         </div>
