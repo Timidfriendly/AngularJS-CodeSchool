@@ -48,7 +48,7 @@
     app.directive("productSpec", function(){
         return {
             restrict: "E",
-            // replace: true, // replace custom element with div
+            replace: true, // replace custom element with div
             templateUrl : "directives/product-spec.html"
         };
     });
