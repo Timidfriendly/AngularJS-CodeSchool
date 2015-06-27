@@ -5,16 +5,22 @@
         this.products = gems;
     });
 
-
-
-    app.controller('GalleryController', function(){
-        this.current = 0;
-        this.setCurrent = function(newCurrent) {
-            if (newCurrent == null) {
+    app.directive('productGallery', function () {
+        return {
+            restrict: "E",
+            templateUrl: "directives/product-gallery.html",
+            replace: true,
+            controller: function () {
                 this.current = 0;
-            } else {
-                this.current = newCurrent;
-            }
+                this.setCurrent = function(imageNumber) {
+                    if (imageNumber == null) {
+                        this.current = 0;
+                    } else {
+                        this.current = imageNumber;
+                    }
+                };
+            },
+            controllerAs: "gallery"
         };
     });
 

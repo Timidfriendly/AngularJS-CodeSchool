@@ -17,22 +17,9 @@
                     {{product.name}}
                     <em class="pull-right">{{product.price | currency}}</em>
                 </h3>
-                <!-- Image Gallery  -->
-                <section class="gallery" ng-hide="{{product.images.length}}">
-                    <small>Our apologies there are no product images for this article</small>
-                </section>
-                <section class="gallery" ng-show="{{product.images.length}}" ng-controller="GalleryController as gallery">
-                    <div class="img-wrap">
-                        <!--<img ng-src="{{product.images[0]}}" />-->
-                        <img ng-src="{{product.images[gallery.current]}}" />
-                    </div>
-                    <hr/>
-                    <ul class="img-thumbnails clearfix">
-                        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-                            <img ng-src="{{image}}" ng-click="gallery.setCurrent($index)" />
-                        </li>
-                    </ul>
-                </section>
+
+                <product-gallery></product-gallery>
+
                 <hr/>
 
                 <product-tabs></product-tabs>
