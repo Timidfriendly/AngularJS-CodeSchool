@@ -12,53 +12,9 @@
     <div id="panel-1" class="panel" ng-include="'directives/product-description.html'" ng-show="panel.isSet(1)"></div>
 
     <product-spec id="panel-2" class="panel" ng-show="panel.isSet(2)" ></product-spec>
-    <div id="panel-3" class="panel" ng-show="panel.isSet(3)">
-        <ul>
-            <h4>Reviews</h4>
-            <li ng-repeat="review in product.reviews">
-                <blockquote>
-                    <strong>{{review.stars}} Stars</strong>
-                    {{review.body}}
-                    <cite class="clearfix">- {{review.author}} <i>on</i> {{review.createdOn | date }}</cite>
-                </blockquote>
-            </li>
-        </ul>
 
-        <!--  Review Form -->
-        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-            <!--  Live Preview -->
-            <blockquote class="review" ng-show="reviewForm.$dirty">
-                <strong class="review__star-rating" ng-show="reviewCtrl.review.stars">{{reviewCtrl.review.stars}} Stars</strong>
-                <span class="review__body">{{reviewCtrl.review.body}}</span>
-                <cite class="review__author  clearfix"  ng-show="reviewCtrl.review.author">- {{reviewCtrl.review.author}} </cite>
-                <!-- TODO: figure out how to show email input immediately form the first character entry. At the moment the email address is only shown when input matches ^[a-z],@,[a-z] -->
-            </blockquote>
+    <product-review id="panel-3" class="panel" ng-show="panel.isSet(3)"></product-review>
 
-            <!--  Review Form -->
-            <h4>Submit a Review</h4>
-            <fieldset class="form-group">
-                <!--<select ng-model="review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">-->
-                <select ng-model="reviewCtrl.review.stars" class="form-control" title="Stars" required>
-                    <option value="">Rate the Product</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </fieldset>
-            <fieldset class="form-group">
-                <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
-            </fieldset>
-            <fieldset class="form-group">
-                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
-            </fieldset>
-            <fieldset class="form-group">
-                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" ng-click="reviewForm.$setPristine();" />
-            </fieldset>
-
-            <!--debug: reviewForm.$validate {{reviewForm.$valid}}-->
-        </form>
-    </div>
     <div id="panel-4" class="panel" my-custom-attr-directive  ng-show="panel.isSet(4)"></div>
+
 </section>

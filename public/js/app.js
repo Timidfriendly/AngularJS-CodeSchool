@@ -1,31 +1,12 @@
 (function () {
-    var app = angular.module('gemStore', []);
+    var app = angular.module('gemStore', ['product-directives']);
 
     app.controller('StoreController', function () {
         this.products = gems;
     });
 
-    app.directive('productGallery', function () {
-        return {
-            restrict: "E",
-            templateUrl: "directives/product-gallery.html",
-            replace: true,
-            controller: function () {
-                this.current = 0;
-                this.setCurrent = function(imageNumber) {
-                    if (imageNumber == null) {
-                        this.current = 0;
-                    } else {
-                        this.current = imageNumber;
-                    }
-                };
-            },
-            controllerAs: "gallery"
-        };
-    });
 
     app.controller('ReviewController', function() {
-        // this = $pristine;
         this.reviews = {};
         this.addReview = function (product) {
             this.review.createdOn = Date.now();
@@ -37,46 +18,8 @@
             // Note:  Had error caused by not passing product into addReview() method.
             // Caused this error: Unknown provider: productProvider <- product <- ReviewController
 
-        }
-    });
-
-    app.directive("productSpec", function(){
-        return {
-            restrict: "E",
-            replace: true, // replace custom element with div
-            templateUrl : "directives/product-spec.html"
         };
     });
-
-    app.directive("myCustomAttrDirective", function () {
-        return {
-            strict: "A",
-            replace: true,
-            templateUrl: "directives/my-custom-attr-directive.html"
-        };
-    });
-
-    app.directive('productTabs', function () {
-        return {
-            restrict: "E",
-            templateUrl: "directives/product-tabs.html",
-            replace: true,
-            controller: function () {
-                this.tab = 4;
-                this.setTab = function (tabToSet, $event) {
-                    this.tab = tabToSet;
-                    $event.preventDefault();
-                };
-                this.isSet = function (tabIsSet) {
-                    if (this.tab === tabIsSet) {
-                        return true;
-                    }
-                };
-            },
-            controllerAs: "panel"
-        };
-    });
-
 
 
 
